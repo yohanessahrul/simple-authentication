@@ -1,18 +1,16 @@
 const User = require('../models/m.user')
 
 module.exports = {
-    cekUser: function(req, res, next) {
+    cekKetersediaanEmail: function(req, res, next) {
         User.findOne({
             email: req.body.email
         }, function(err, response) {
             console.log(response)
             if(response == undefined){
-                res.status(500).json({
-                    message: 'Bisa masukkin data'
-                })
+                console.log('bisa masukin data')
                 next()
             } else {
-                res.status(200).json({
+                res.status(500).json({
                     message: 'Email sudah ada gan'
                 })
             }

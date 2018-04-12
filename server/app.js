@@ -1,6 +1,9 @@
 const express = require('express')
 const PORT = 3000
 const api = require('./routes/index')
+const jwt = require('jsonwebtoken')
+
+
 var mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/lcmid');
 
